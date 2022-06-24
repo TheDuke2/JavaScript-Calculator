@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Calculator</title>
+  </head>
+  <body>
+    <h1>My JavaScript Calculator</h1>
+    <button onclick="myCalculator()">Open Calculator</button>
+    <script>
+      function myCalculator() {
+        let operator = prompt("Please choose operation\n\n {+, -, *, /}");
+        // Checks if the correct operation is chosen
+        if (
+          operator == "+" ||
+          operator == "-" ||
+          operator == "*" ||
+          operator == "/"
+        ) {
+          // takes users input
+          var firstNumber = parseInt(prompt("Please enter first number"));
+          var secondNumber = parseInt(prompt("Please enter second number"));
+          let result;
+
+          //operations
+          if (operator == "+") {
+            result = firstNumber + secondNumber;
+            alert("The result of the addition is " + result);
+          } else if (operator == "-") {
+            result = firstNumber - secondNumber;
+            alert("The result of the subtraction is " + result);
+          } else if (operator == "*") {
+            result = firstNumber * secondNumber;
+            alert("The result of the multiplication is " + result);
+          } else if (operator == "/") {
+            result = firstNumber / secondNumber;
+            alert("The result of the division is " + result);
+          }
+        }
+        // loops until the correct operator is entered
+        else {
+          if (confirm("Invalid Operation\n Enter valid operator")) {
+            myCalculator();
+            // exits the loops
+          } else {
+            alert("Goodbye !");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
